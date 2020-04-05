@@ -1,42 +1,40 @@
 <template>
-    <div class="searcher">
-    <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
-
-        <v-toolbar
-                dense
-                floating
-        >
+    <v-container id="search-form" @submit="submit">
+        <v-form >
             <v-text-field
-                    v-model="query"
-                    @input="do_search()"
-                    hide-details
-                    prepend-icon="search"
-                    single-line
+                solo
+                clearable
+                color="teal lighten-1"
+                label="Search book"
+                prepend-inner-icon="mdi-magnify"
+                v-model="query"
             ></v-text-field>
-        </v-toolbar>
-    </div>
+        </v-form>
+    </v-container>
 </template>
 
 <script>
     export default {
         name: "BookSearcher",
-        data(){
+        data() {
             return {
                 query:''
             }
         },
         methods:{
-            do_search(){
+            submit: function() {
                 console.log(this.query)
+                this.clear()
+            },
+            clear: function() {
+                this.query = ''
             }
         }
     }
 </script>
 
 <style scoped>
-.searcher{
-    position: absolute;
-    top: 50px;
-    right: 0px;
-}
+    #search-form {
+        width: 60%
+    }
 </style>
