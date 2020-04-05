@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <BooksHolder></BooksHolder>
     <BookSearcher></BookSearcher>
+    <BooksHolder></BooksHolder>
   </div>
 </template>
 

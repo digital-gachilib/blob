@@ -36,7 +36,7 @@
 <style scoped>
 .searcher{
     position: absolute;
-    top: 100px;
-    right: 10px;
+    top: 50px;
+    right: 0px;
 }
 </style>
