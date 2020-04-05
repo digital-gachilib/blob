@@ -1,11 +1,13 @@
 <template>
   <div class="home">
     <BooksHolder></BooksHolder>
+    <BookSearcher></BookSearcher>
   </div>
 </template>
 
 <script>
 import BooksHolder from '../components/home/BookskHolder.vue'
+import BookSearcher from "../components/home/BookSearcher";
 
 export default {
   name: 'Home',
@@ -16,6 +18,7 @@ export default {
   },
   components: {
     BooksHolder,
+    BookSearcher
   },
   mounted: function() {
     this.getToken()
