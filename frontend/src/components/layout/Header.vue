@@ -10,9 +10,26 @@
             <v-spacer></v-spacer>
 
             <div id="nav">
-                <router-link class="router-link" to="/login">Login</router-link>
-                |
-                <router-link class="router-link" to="/home">Home</router-link>
+                <router-link class="router-link mr-3" to="/login">
+                    <v-btn
+                        color="white"
+                        text
+                        value="feed"
+                        outlined
+                    >
+                        <span>Login</span>
+                    </v-btn>
+                </router-link>
+                <router-link class="router-link" to="/home">
+                    <v-btn
+                        color="white"
+                        text
+                        value="feed"
+                        outlined
+                    >
+                        <span>Home</span>
+                    </v-btn>
+                </router-link>
             </div>
 
         </v-app-bar>
@@ -24,12 +41,4 @@
 </script>
 
 <style>
-    #nav {
-        color: black;
-    }
-
-    .router-link{
-        text-decoration: none;
-        color: aqua;
-    }
 </style>
