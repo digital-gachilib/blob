@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="mb-10">
         <v-app-bar
                 color="teal darken-3"
                 dense
@@ -12,7 +12,7 @@
             <div id="nav">
                 <router-link class="router-link" to="/login">Login</router-link>
                 |
-                <router-link class="router-link" to="/">Home</router-link>
+                <router-link class="router-link" to="/home">Home</router-link>
             </div>
 
         </v-app-bar>
