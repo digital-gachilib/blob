@@ -5,31 +5,11 @@
                 dense
                 dark
         >
-            <v-toolbar-title>DIGITAL LIBRARY</v-toolbar-title>
-
+            <ButtonHome/>
             <v-spacer></v-spacer>
-
             <div id="nav">
-                <router-link class="router-link mr-3" to="/login">
-                    <v-btn
-                        color="white"
-                        text
-                        value="feed"
-                        outlined
-                    >
-                        <span>Login</span>
-                    </v-btn>
-                </router-link>
-                <router-link class="router-link" to="/home">
-                    <v-btn
-                        color="white"
-                        text
-                        value="feed"
-                        outlined
-                    >
-                        <span>Home</span>
-                    </v-btn>
-                </router-link>
+                <ButtonLogin/>
+                <ButtonLogout/>
             </div>
 
         </v-app-bar>
@@ -37,8 +17,15 @@
 </template>
 
 <script>
-    export default {}
+    import ButtonLogin from "./ButtonLogin";
+    import ButtonHome from "./ButtonHome";
+    import ButtonLogout from "./ButtonLogout";
+
+    export default {
+        components: {ButtonHome, ButtonLogin, ButtonLogout},
+    }
 </script>
+
 
 <style>
 </style>
