@@ -10,26 +10,8 @@
             <v-spacer></v-spacer>
 
             <div id="nav">
-                <router-link class="router-link mr-3" to="/login">
-                    <v-btn
-                        color="white"
-                        text
-                        value="feed"
-                        outlined
-                    >
-                        <span>Login</span>
-                    </v-btn>
-                </router-link>
-                <router-link class="router-link" to="/home">
-                    <v-btn
-                        color="white"
-                        text
-                        value="feed"
-                        outlined
-                    >
-                        <span>Home</span>
-                    </v-btn>
-                </router-link>
+                <HeaderButtonLogin/>
+                <HeaderButtonHome/>
             </div>
 
         </v-app-bar>
@@ -37,8 +19,14 @@
 </template>
 
 <script>
-    export default {}
+    import HeaderButtonLogin from "../login/HeaderButtonLogin";
+    import HeaderButtonHome from "../home/HeaderButtonHome";
+
+    export default {
+        components: {HeaderButtonHome, HeaderButtonLogin},
+    }
 </script>
+
 
 <style>
 </style>
