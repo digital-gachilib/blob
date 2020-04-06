@@ -4,17 +4,19 @@
             <h1>Login</h1>
             <v-text-field
             v-model="username"
-            :counter="100"
             label="Username"
             required
+            prepend-inner-icon="mdi-account"
+            color="teal lighten-1"
             ></v-text-field>
 
             <v-text-field
             v-model="password"
-            :counter="100"
             label="Password"
             required
             type='password'
+            prepend-inner-icon="mdi-lock-question"
+            color="teal lighten-1"
             ></v-text-field>
 
             <v-btn class="btn mr-10 teal lighten-3" type="submit">submit</v-btn>
@@ -24,34 +26,23 @@
 </template>
 
 <script>
-import axios from "axios"
-
 export default {
     name: 'LoginForm',
     data() {
         return {
             username: '',
             password: '',
-            authorized: false,
         }
     },
     methods: {
         submit() {
-            axios.post(
-                "http://127.0.0.1:8000/api-token-auth/", 
+            this.$emit(
+                "loginAttempt", 
                 {
-                    'username': this.username,
-                    'password': this.password,
+                    "username": this.username, 
+                    "password": this.password
                 }
-            ).then(response => {
-                localStorage.setItem("token", response.data.token)
-                this.$router.replace({name: "Home"})
-            })
-            .catch(error => {
-                if (error.response.status === 400) {
-                    localStorage.setItem("token", 'none')
-                }
-            })
+            )
             this.clear()
         },
         clear() {
