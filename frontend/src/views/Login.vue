@@ -1,20 +1,26 @@
 <template>
     <div>
     <LoginForm @loginAttempt="loginAttempt" />
-    <UnsuccessfulLogin v-if="showAlert" />
+    <v-container style="width: 60%" class="pt-9">
+      <v-alert 
+        type="error"
+        v-model="showAlert"
+        dismissible
+      >
+        Unsuccessful Login attempt!
+      </v-alert>
+    </v-container>
     </div>
 </template>
 
 <script>
 import axios from "axios"
 import LoginForm from '../components/login/LoginForm.vue'
-import UnsuccessfulLogin from '../components/login/UnsuccessfulLogin.vue'
 
 export default {
   name: 'Login',
   components: {
     LoginForm,
-    UnsuccessfulLogin,
   },
   data() {
     return {
