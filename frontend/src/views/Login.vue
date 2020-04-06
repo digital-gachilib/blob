@@ -7,7 +7,7 @@
         v-model="showAlert"
         dismissible
       >
-        Unsuccessful Login attempt!
+        <strong>Unsuccessful Login attempt!</strong>
       </v-alert>
     </v-container>
     </div>
