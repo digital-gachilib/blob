@@ -24,10 +24,6 @@
         methods:{
             submit: function() {
                 console.log(this.query)
-                this.clear()
-            },
-            clear: function() {
-                this.query = ''
             }
         }
     }
