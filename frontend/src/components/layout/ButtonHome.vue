@@ -3,16 +3,14 @@
             v-on:click="go_to_home()"
             color="white"
             text
-            value="feed"
-            outlined
     >
-        <span>Home</span>
+        <span>DIGITAL LIBRARY</span>
     </v-btn>
 </template>
 
 <script>
     export default {
-        name: "HeaderButtonHome",
+        name: "ButtonHome",
         methods: {
             go_to_home() {
                 this.$router.push("/home")

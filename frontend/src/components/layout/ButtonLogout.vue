@@ -6,13 +6,13 @@
             value="feed"
             outlined
     >
-        <span>Login</span>
+        <span>Logout</span>
     </v-btn>
 </template>
 
 <script>
     export default {
-        name: "HeaderButtonLogin",
+        name: "ButtonLogout",
         methods:{
             go_to_login(){
                 this.$router.push("/login")

@@ -5,13 +5,11 @@
                 dense
                 dark
         >
-            <v-toolbar-title>DIGITAL LIBRARY</v-toolbar-title>
-
+            <ButtonHome/>
             <v-spacer></v-spacer>
-
             <div id="nav">
-                <HeaderButtonLogin/>
-                <HeaderButtonHome/>
+                <ButtonLogin/>
+                <ButtonLogout/>
             </div>
 
         </v-app-bar>
@@ -19,11 +17,12 @@
 </template>
 
 <script>
-    import HeaderButtonLogin from "./HeaderButtonLogin";
-    import HeaderButtonHome from "./HeaderButtonHome";
+    import ButtonLogin from "./ButtonLogin";
+    import ButtonHome from "./ButtonHome";
+    import ButtonLogout from "./ButtonLogout";
 
     export default {
-        components: {HeaderButtonHome, HeaderButtonLogin},
+        components: {ButtonHome, ButtonLogin, ButtonLogout},
     }
 </script>
 
