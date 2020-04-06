@@ -19,8 +19,8 @@
 </template>
 
 <script>
-    import HeaderButtonLogin from "../login/HeaderButtonLogin";
-    import HeaderButtonHome from "../home/HeaderButtonHome";
+    import HeaderButtonLogin from "./HeaderButtonLogin";
+    import HeaderButtonHome from "./HeaderButtonHome";
 
     export default {
         components: {HeaderButtonHome, HeaderButtonLogin},
