@@ -1,10 +1,7 @@
 <template>
     <v-app>
     <Header></Header>
-    <div id="nav">
-      <router-link to="/login">Login</router-link> |
-      <router-link to="/">Home</router-link>
-    </div>
+    <br>
     <router-view/>
     <!-- <Footer></Footer> -->
     </v-app>
