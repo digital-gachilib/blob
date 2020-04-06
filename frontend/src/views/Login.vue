@@ -1,5 +1,6 @@
 <template>
     <div>
+    <Header />
     <LoginForm @loginAttempt="loginAttempt" />
     <v-container style="width: 60%" class="pt-9">
       <v-alert 
@@ -16,11 +17,13 @@
 <script>
 import axios from "axios"
 import LoginForm from '../components/login/LoginForm.vue'
+import Header from '../components/layout/Header.vue'
 
 export default {
   name: 'Login',
   components: {
     LoginForm,
+    Header,
   },
   data() {
     return {
@@ -37,6 +40,7 @@ export default {
         }
       ).then(response => {
         localStorage.setItem("token", response.data.token)
+        localStorage.setItem("loggedIn", "true")
         this.$router.replace({name: "Home"})
       })
       .catch(error => {
@@ -46,6 +50,11 @@ export default {
         }
       })
     },
+  },
+  beforeCreate() {
+    if (localStorage.getItem("loggedIn") === "true") {
+      this.$router.replace({name: "Home"})
+    }
   }
 }
 </script>

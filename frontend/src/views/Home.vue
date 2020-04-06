@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <Header />
     <BookSearcher></BookSearcher>
     <BooksHolder></BooksHolder>
   </div>
@@ -8,17 +9,19 @@
 <script>
 import BooksHolder from '../components/home/BookskHolder.vue'
 import BookSearcher from "../components/home/BookSearcher";
+import Header from '../components/layout/Header.vue'
 
 export default {
   name: 'Home',
-  data() {
-    return {
-      token: "no token"
-    }
-  },
   components: {
     BooksHolder,
-    BookSearcher
+    BookSearcher,
+    Header,
+  },
+  data() {
+    return {
+      token: "none"
+    }
   },
   mounted: function() {
     this.getToken()
