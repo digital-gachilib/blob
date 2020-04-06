@@ -15,6 +15,8 @@
         name: "ButtonLogout",
         methods:{
             go_to_login(){
+                localStorage.setItem('loggedIn', 'false')
+                localStorage.setItem("token", 'none')
                 this.$router.push("/login")
             }
         }

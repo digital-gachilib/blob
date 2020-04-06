@@ -8,8 +8,8 @@
             <ButtonHome/>
             <v-spacer></v-spacer>
             <div id="nav">
-                <ButtonLogin/>
-                <ButtonLogout/>
+                <ButtonLogin v-if="loggedIn == 'false'" />
+                <ButtonLogout v-if="loggedIn == 'true'" />
             </div>
 
         </v-app-bar>
@@ -22,7 +22,13 @@
     import ButtonLogout from "./ButtonLogout";
 
     export default {
+        name: 'Header',
         components: {ButtonHome, ButtonLogin, ButtonLogout},
+        data() {
+            return {
+                loggedIn: localStorage.getItem('loggedIn') || "false"
+            }
+        }
     }
 </script>
 
