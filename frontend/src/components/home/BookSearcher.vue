@@ -23,7 +23,7 @@
         },
         methods:{
             submit: function() {
-                console.log(this.query)
+                this.$emit("getBooks", {'query': this.query})
             }
         }
     }
