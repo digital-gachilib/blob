@@ -51,8 +51,8 @@ export default {
             })
             .catch(error => {
                 console.log(error)
+                this.$router.replace({name: "Login"})
             })
-            console.log(this.books)
         }
   }
 }
