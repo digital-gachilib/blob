@@ -1,5 +1,10 @@
 <template>
     <v-container>
+        <v-container v-if="books == false" style="width: 60%" class="pt-9">
+            <v-alert type="info">
+                <strong>No books found :(</strong>
+            </v-alert>
+        </v-container>
         <v-col v-for="book in books" :key="book.id">
             <Book v-if="authorized" :title="book.title" :description="book.description"></Book>
         </v-col>
