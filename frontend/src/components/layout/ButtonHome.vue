@@ -1,7 +1,6 @@
 <template>
     <v-btn
             v-on:click="go_to_home()"
-            color="white"
             text
     >
         <span>DIGITAL LIBRARY</span>

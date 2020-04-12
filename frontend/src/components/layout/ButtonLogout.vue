@@ -1,12 +1,11 @@
 <template>
     <v-btn
             v-on:click="go_to_login()"
-            color="white"
             text
-            value="feed"
-            outlined
+            tale
     >
         <span>Logout</span>
+        <v-icon>mdi-logout</v-icon>
     </v-btn>
 </template>
 

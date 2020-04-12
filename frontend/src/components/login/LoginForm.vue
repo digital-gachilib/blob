@@ -19,8 +19,7 @@
             color="teal lighten-1"
             ></v-text-field>
 
-            <v-btn class="btn mr-10 teal lighten-3" type="submit">submit</v-btn>
-            <v-btn class="btn red lighten-3" @click="clear">clear</v-btn>
+            <v-btn class="btn teal lighten-2" type="submit">submit</v-btn>
         </v-form>
     </v-container>
 </template>
