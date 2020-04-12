@@ -1,16 +1,16 @@
 <template>
     <div>
-    <Header />
-    <LoginForm @loginAttempt="loginAttempt" />
-    <v-container style="width: 60%" class="pt-9">
-      <v-alert 
-        type="error"
-        v-model="showAlert"
-        dismissible
-      >
-        <strong>Unsuccessful Login attempt!</strong>
-      </v-alert>
-    </v-container>
+      <Header />
+      <LoginForm @loginAttempt="loginAttempt" />
+      <v-container>
+        <v-alert 
+          type="error"
+          v-model="showAlert"
+          dismissible
+        >
+          <strong>Unsuccessful Login attempt!</strong>
+        </v-alert>
+      </v-container>
     </div>
 </template>
 

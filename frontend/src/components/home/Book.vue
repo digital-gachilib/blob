@@ -1,9 +1,7 @@
 <template>
     <v-card
-      class="mx-auto"
-      min-width="600"
-      max-width="800"
       elevation="3"
+      class="ma-3 pa-6"
     >
       <v-card-title>{{ title }}</v-card-title>
       <v-card-text>{{ description }}</v-card-text>
