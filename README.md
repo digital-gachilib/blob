@@ -1,8 +1,11 @@
 # Digital Library Frontend
 
-![](https://i.imgur.com/HkW2qQd.png)
+![](https://i.imgur.com/Xo0Mowx.png)
 
-![](https://i.imgur.com/13Tevvm.png)
+![](https://i.imgur.com/9iFlYUe.png)
+
+![](https://i.imgur.com/6p2QNwQ.png)
+
 
 ## Project setup
 ```
