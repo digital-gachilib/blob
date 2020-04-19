@@ -1,30 +1,21 @@
 <template>
   <div class="content">
-    <v-container class="pt-9">
-      <v-row>
-        <h1>
-          {{ book.title }}
-        </h1>
-        <v-spacer></v-spacer>
-        <DownloadButton />
-      </v-row>
-    </v-container>
-
     <v-container style="width: 60%" class="pt-9">
-      <BookPreview class="img" />
+      <h1>{{ book.title }}</h1>
       <h2>Author: {{ book.author.name + " " + book.author.surname }}</h2>
       <h2>Description:</h2>
       <p>{{ book.description }}</p>
+      <DownloadButton />
     </v-container>
   </div>
 </template>
 <script>
 import DownloadButton from "./DownloadButton";
-import BookPreview from "./BookPreview";
+// import BookPreview from "./BookPreview"
 
 export default {
   name: "Content",
-  components: { BookPreview, DownloadButton },
+  components: { DownloadButton },
   props: ["book"],
 };
 </script>
