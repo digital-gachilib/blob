@@ -4,7 +4,7 @@
 
 ![](https://i.imgur.com/9iFlYUe.png)
 
-![](https://i.imgur.com/6p2QNwQ.png)
+![](https://i.imgur.com/5SucmZ2.png)
 
 
 ## Project setup
