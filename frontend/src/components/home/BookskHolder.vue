@@ -2,7 +2,7 @@
     <v-container >
         <v-layout row wrap justify-left>
             <v-flex xs12 sm6 md4 lg3 xl2 v-for="book in books" :key="book.id">
-                <Book v-if="authorized" :title="book.title" :description="book.description"></Book>
+                <BookTile v-if="authorized" :book="book"></BookTile>
             </v-flex>
         </v-layout>
         <v-container style="width: 60%" class="pt-9" v-if="books == false">
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import Book from './Book.vue'
+import BookTile from './BookTile.vue'
 
 export default {
     name: 'BooksHolder',
@@ -25,7 +25,7 @@ export default {
     },
     props: ["books"],
     components: {
-        Book
+        BookTile
     }
 }
 </script>
