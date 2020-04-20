@@ -5,12 +5,13 @@
 </template>
 
 <script>
-export default {
-  name: "DownloadButton",
-  methods: {
-    download() {
-      alert("DOWNLOAD STARTED!!! (or not)");
+  export default {
+    name: "DownloadButton",
+    props:['download_link'],
+    methods: {
+      download() {
+        window.open(this.download_link);
+      },
     },
-  },
-};
+  };
 </script>
