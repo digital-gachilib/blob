@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <Header />
-    <BookSearcher @getBooks.prevent="getBooks"></BookSearcher>
+    <BookSearcher @getBooks="getBooks"></BookSearcher>
     <BooksHolder :books="books"></BooksHolder>
   </div>
 </template>
