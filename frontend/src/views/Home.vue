@@ -2,7 +2,7 @@
   <div class="home">
     <Header />
     <BookSearcher @getBooks="getBooks"></BookSearcher>
-    <BooksHolder :books="books"></BooksHolder>
+    <BooksHolder :books="books" :sent_request="sent_request"></BooksHolder>
   </div>
 </template>
 
@@ -23,6 +23,7 @@ export default {
   data() {
     return {
       token: "none",
+      sent_request: "false",
       books: [],
     };
   },
@@ -45,6 +46,7 @@ export default {
         })
         .then((response) => {
           this.books = response.data;
+          this.sent_request = true;
         })
         .catch((error) => {
           console.log(error);

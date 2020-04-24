@@ -5,7 +5,7 @@
         <BookTile :book="book"></BookTile>
       </v-flex>
     </v-layout>
-    <v-container style="width: 60%" class="pt-9" v-if="books == false">
+    <v-container style="width: 60%" class="pt-9" v-if="(sent_request == true) && (books == false)">
       <v-alert type="info">
         <strong>No books found :(</strong>
       </v-alert>
@@ -18,9 +18,9 @@ import BookTile from "./BookTile.vue";
 
 export default {
   name: "BooksHolder",
-  props: ["books"],
+  props: ["books", "sent_request"],
   components: {
-    BookTile,
-  },
+    BookTile
+  }
 };
 </script>
