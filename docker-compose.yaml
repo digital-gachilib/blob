@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+    blob:
+      build: .
+      image: blob
+      ports:
+        - "8080:8080"
+      networks:
+        - meadow
+
+networks:
+  meadow:
