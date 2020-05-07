@@ -3,7 +3,7 @@ version: '3'
 services:
     blob:
       build: .
-      image: blob
+      image: birdi7/blob
       ports:
         - "8080:8080"
       networks:
