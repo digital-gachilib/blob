@@ -1,96 +1,82 @@
 <template>
-    <div class="container">
+  <div>
+    <h2 v-if="submissionComplete">
+      Thank you for your submission.
+      It will become visible to other users after review by administrators.
+    </h2>
 
-        <h2 v-if="submissionComplete">
-            Thank you for your submission.
-            It will become visible to other users after review by administrators.
-        </h2>
+    <v-container @submit.prevent="onSubmit" v-if="!submissionComplete">
+      <v-layout row wrap justify-center>
+        <v-flex xs11 sm10 md10 lg8 xl6>
+          <v-form id="login-form">
+            <h1>Book upload form</h1>
+            <v-text-field v-model="title" label="Title" required color="teal lighten-1"></v-text-field>
+            <v-text-field
+              v-model="author_first_name"
+              label="Author first name"
+              required
+              color="teal lighten-1"
+            ></v-text-field>
+            <v-text-field
+              v-model="author_last_name"
+              label="Author last name"
+              required
+              color="teal lighten-1"
+            ></v-text-field>
+            <v-text-field v-model="link" label="Link to download" required color="teal lighten-1"></v-text-field>
+            <v-textarea v-model="description" label="Description" required color="teal lighten-1"></v-textarea>
 
-        <form class="upload_form" @submit.prevent="onSubmit" v-if="!submissionComplete">
-            <p>
-                <label for="book_title"> Title: </label>
-                <input required id="book_title" v-model="title">
-            </p>
-
-            <p>
-                <label for="book_description"> Description: </label>
-                <textarea required id="book_description" v-model="description"> </textarea>
-            </p>
-
-            <p>
-                <label for="book_link"> Download link: </label>
-                <input required id="book_link" v-model="link">
-            </p>
-
-            <input class="submit" type="submit" value="Submit">
-        </form>
-
-    </div>
+            <v-btn class="btn teal lighten-2" type="submit">submit</v-btn>
+          </v-form>
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </div>
 </template>
 
 <script>
-    import axios from "axios"
+import axios from "axios";
 
-    export default {
-        name: "UploadForm",
-        data() {
-            return {
-                title: null,
-                description: null,
-                author: null,
-                link: null,
-                submissionComplete: false
-            }
-        },
-        methods: {
-            onSubmit() {
-                if (this.title && this.description && this.link) {
-                    let book = {
-                        title: this.title,
-                        description: this.description,
-                        link: this.link
-                    };
-
-                    axios.post(
-                        "http://127.0.0.1:8000/book-upload/",
-                        {
-                            'title': book['title'],
-                            'description': book['description'],
-                            'link': book['link']
-                        }
-                    ).then(() => {
-                        this.submissionComplete = true
-                    }).catch(() => {
-                        alert('Something went wrong')
-                    })
-                }
-            }
-        }
+export default {
+  name: "UploadForm",
+  data() {
+    return {
+      title: null,
+      description: null,
+      author_first_name: null,
+      author_last_name: null,
+      link: null,
+      submissionComplete: false
+    };
+  },
+  methods: {
+    onSubmit() {
+      axios
+        .post("http://127.0.0.1:8000/api/new_book/", null, {
+          params: {
+            link: this.link,
+            title: this.title,
+            description: this.description,
+            first_name: this.author_first_name,
+            last_name: this.author_last_name
+          },
+          headers: {
+            Authorization: `Token ${localStorage.getItem("token")}`
+          }
+        })
+        .then(() => {
+          this.submissionComplete = true;
+        })
+        .catch(() => {
+          alert("Something went wrong");
+        });
     }
-
+  }
+};
 </script>
 
 <style scoped>
-    .submit {
-        background-color: #4db6ac;
-        align-content: center;
-        width: 50%;
-    }
-
-    .container {
-        width: auto;
-    }
-
-    .upload_form {
-        position: absolute;
-        padding: 20px;
-        margin: 40px;
-        border: 1px solid #d8d8d8;
-    }
-
-    input, textarea {
-        border: 1px solid #d8d8d8;
-        height: 25px;
-        margin-bottom: 20px;
-    }
+h2 {
+  text-align: center;
+}
 </style>
