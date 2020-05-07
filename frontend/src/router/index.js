@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Book from "../views/Book";
+import Upload from "../views/Upload";
 
 Vue.use(VueRouter);
 
@@ -28,6 +29,11 @@ const routes = [
     name: "book_page",
     component: Book,
     props: true,
+  },
+  {
+    path: "/upload",
+    name: "Upload",
+    component: Upload
   },
 ];
 
