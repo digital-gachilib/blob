@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+    blob:
+      build: .
+      image: birdi7/blob
+      ports:
+        - "8080:8080"
+      networks:
+        - meadow
+
+networks:
+  meadow:
